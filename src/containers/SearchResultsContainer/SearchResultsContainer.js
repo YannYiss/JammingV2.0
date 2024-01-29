@@ -1,8 +1,15 @@
 import React from 'react';
+import Track from '../../components/Track/Track';
 
 function SearchResultsContainer() {
   return (
-    <div>SearchResultsContainer</div>
+    <div>
+      <h1>Search Results</h1>
+      <Track />
+      <Track />
+      <Track />
+      <Track />
+    </div>
   )
 }
 

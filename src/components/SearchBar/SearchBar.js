@@ -1,8 +1,12 @@
 import React from 'react';
+import SearchButton from '../SearchButton/SearchButton';
 
 function SearchBar() {
   return (
-    <div>SearchBar</div>
+    <form>
+      <input type='text' placeholder='Search' />
+      <SearchButton />
+    </form>
   )
 }
 
