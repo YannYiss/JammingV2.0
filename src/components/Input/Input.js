@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Input() {
+function Input({handleNameInput}) {
   return (
-    <input type='text' placeholder='Name you playlist here ✏️'/>
+    <input onChange={handleNameInput} type='text' placeholder='Name you playlist here ✏️'/>
   )
 }
 

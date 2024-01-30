@@ -10,13 +10,13 @@ function App() {
       artist: 'Limp Bizkit',
       album: 'One Dolar Bill',
       track: 'Something',
-      id: 'sdavfdklndlgsdf65465a4sc6ds4f'
+      uri: 'sdavfdklndlgsdf65465a4sc6ds4f'
     }, 
     {
       artist: 'Muse',
       album: 'Anthology',
       track: 'Map of the problematic',
-      id: '65a4cs6d5fv41s658v4d3a2c1as35d46f5s43v'
+      uri: '65a4cs6d5fv41s658v4d3a2c1as35d46f5s43v'
     }
     ]);
 
@@ -38,12 +38,27 @@ function App() {
     setPlaylist(newArray)
     setSearchResults((prev) => [track, ...prev]);
   }
+
+  const handleSave = (playlist) => {
+    if(playlist.length == 0) {
+      alert('Please add at least 1 song to create a new playlist');
+    } else if(playlistName === '') {
+      alert('Please name your playlist');
+    } else {
+      const tracksUri = [];
+      playlist.map((track) => {
+        tracksUri.push(track.uri);
+      });
+      console.log(tracksUri);
+      console.log(playlistName);
+    }
+  };
   
   return (
     <div className="App">
       <HeaderContainer />
       <SearchResultsContainer searchResults={searchResults} handleAddTrack={handleAddTrack}/>
-      <TracklistContainer handleNameInput={handleNameInput} playlist={playlist} handleRemoveTrack={handleRemoveTrack}/>
+      <TracklistContainer handleSave={handleSave} handleNameInput={handleNameInput} playlist={playlist} handleRemoveTrack={handleRemoveTrack}/>
     </div>
   );
 }

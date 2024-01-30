@@ -1,8 +1,8 @@
 import React from 'react'
 
-function SaveButton() {
+function SaveButton({handleSave}) {
   return (
-    <button>SaveButton</button>
+    <button onClick={handleSave}>SaveButton</button>
   )
 }
 

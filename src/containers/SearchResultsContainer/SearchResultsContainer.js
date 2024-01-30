@@ -11,7 +11,7 @@ function SearchResultsContainer(props) {
        return (
         <div className='Track'>
           <div className='trackInfo'>
-            <Track artistName={result.artist} albumName={result.album} trackName={result.track} id={result.id} key={result.id}/>
+            <Track artistName={result.artist} albumName={result.album} trackName={result.track} uri={result.uri} key={result.uri}/>
           </div>
           <div className='addButton'>
             <ActionButton action='➕' handleClick={() => props.handleAddTrack(result)}/>

@@ -7,12 +7,12 @@ import Input from '../../components/Input/Input';
 function TracklistContainer(props) {
   return (
     <div>
-      <Input/>
+      <Input handleNameInput={props.handleNameInput}/>
       {props.playlist.map((track) => {
         return (
           <div className='track'>
             <div className='trackInfo'>
-              <Track artistName={track.artist} albumName={track.album} trackName={track.track} id={track.id} key={track.id}/>
+              <Track artistName={track.artist} albumName={track.album} trackName={track.track} uri={track.uri} key={track.uri}/>
             </div>
             <div className='removeButton'>
               <ActionButton action='➖' handleClick={()=> props.handleRemoveTrack(track)}/>
@@ -20,7 +20,7 @@ function TracklistContainer(props) {
           </div>
         );
       })}
-      <SaveButton />
+      <SaveButton handleSave={() => props.handleSave(props.playlist)} />
     </div>
   )
 };
