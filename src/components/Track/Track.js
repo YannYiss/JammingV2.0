@@ -1,17 +1,13 @@
 import React from 'react';
 import ActionButton from '../AcctionButton/ActionButton';
 
-function Track() {
+function Track(props) {
   return (
     <div>
-      <div>
-        <h2>Track Name</h2>
-        <h3>Artist Name</h3>
-        <img />
-      </div>
-      <div>
-        <ActionButton action='➖'/>
-      </div>
+      <h2>{props.trackName}</h2>
+      <h3>{props.artistName}</h3>
+      <p>{props.albumName}</p>
+      <img />
     </div>
   )
 };

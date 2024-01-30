@@ -1,8 +1,8 @@
 import React from 'react'
 
-function ActionButton({action}) {
+function ActionButton({action, handleClick}) {
   return (
-    <button>{action}</button>
+    <button onClick={handleClick}>{action}</button>
   )
 }
 
