@@ -30,11 +30,13 @@ function App() {
 
   const handleAddTrack = (track) => {
     setPlaylist((prev) => [track, ...prev]);
+    setSearchResults(searchResults.filter((resultsTrack) => track !== resultsTrack));
   }
 
   const handleRemoveTrack = (track) => {
     const newArray = playlist.filter((trackInPlaylist) => track !== trackInPlaylist)
     setPlaylist(newArray)
+    setSearchResults((prev) => [track, ...prev]);
   }
   
   return (
