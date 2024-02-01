@@ -1,10 +1,12 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import HeaderContainer from './containers/HeaderContainer/HeaderContainer';
 import SearchResultsContainer from './containers/SearchResultsContainer/SearchResultsContainer';
 import TracklistContainer from './containers/TracklistContainer/TracklistContainer';
+import Spotify from '../src/utils/Spotify';
 
 function App() {
+
   const [searchResults, setSearchResults] = useState([
     {
       artist: 'Limp Bizkit',
@@ -41,9 +43,9 @@ function App() {
 
   const handleSave = (playlist) => {
     if(playlist.length == 0) {
-      alert('Please add at least 1 song to create a new playlist');
+      return alert('Please add at least 1 song to create a new playlist');
     } else if(playlistName === '') {
-      alert('Please name your playlist');
+      return alert('Please name your playlist');
     } else {
       const tracksUri = [];
       playlist.map((track) => {
@@ -56,7 +58,7 @@ function App() {
   
   return (
     <div className="App">
-      <HeaderContainer />
+      <HeaderContainer login={Spotify.getAccessToken}/>
       <SearchResultsContainer searchResults={searchResults} handleAddTrack={handleAddTrack}/>
       <TracklistContainer handleSave={handleSave} handleNameInput={handleNameInput} playlist={playlist} handleRemoveTrack={handleRemoveTrack}/>
     </div>

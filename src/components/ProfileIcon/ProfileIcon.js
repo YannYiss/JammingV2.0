@@ -1,8 +1,8 @@
 import React from 'react'
 
-function ProfileIcon() {
+function ProfileIcon({login}) {
   return (
-    <div>ProfileIcon</div>
+    <div onClick={login}>ProfileIcon</div>
   )
 }
 
