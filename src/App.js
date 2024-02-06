@@ -7,20 +7,7 @@ import Spotify from '../src/utils/Spotify';
 
 function App() {
 
-  const [searchResults, setSearchResults] = useState([
-    {
-      artist: 'Limp Bizkit',
-      album: 'One Dolar Bill',
-      track: 'Something',
-      uri: 'sdavfdklndlgsdf65465a4sc6ds4f'
-    }, 
-    {
-      artist: 'Muse',
-      album: 'Anthology',
-      track: 'Map of the problematic',
-      uri: '65a4cs6d5fv41s658v4d3a2c1as35d46f5s43v'
-    }
-    ]);
+  const [searchResults, setSearchResults] = useState([]);
 
   const [playlistName, setPlaylistName] = useState('');
 
@@ -31,6 +18,7 @@ function App() {
   const [playlist, setPlaylist] = useState([]);
 
   const handleAddTrack = (track) => {
+    console.log(track)
     setPlaylist((prev) => [track, ...prev]);
     setSearchResults(searchResults.filter((resultsTrack) => track !== resultsTrack));
   }
@@ -42,7 +30,7 @@ function App() {
   }
 
   const handleSave = (playlist) => {
-    if(playlist.length == 0) {
+    if(playlist.length === 0) {
       return alert('Please add at least 1 song to create a new playlist');
     } else if(playlistName === '') {
       return alert('Please name your playlist');
@@ -55,10 +43,16 @@ function App() {
       console.log(playlistName);
     }
   };
+
+  const handleSearch = async (e) => {
+    const res = await Spotify.searchTracks(e);
+    console.log(res)
+    setSearchResults(res);
+  }
   
   return (
     <div className="App">
-      <HeaderContainer login={Spotify.getAccessToken}/>
+      <HeaderContainer login={Spotify.getAccessToken} handleSearch={handleSearch}/>
       <SearchResultsContainer searchResults={searchResults} handleAddTrack={handleAddTrack}/>
       <TracklistContainer handleSave={handleSave} handleNameInput={handleNameInput} playlist={playlist} handleRemoveTrack={handleRemoveTrack}/>
     </div>

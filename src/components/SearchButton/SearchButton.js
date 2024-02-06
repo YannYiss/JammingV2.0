@@ -2,7 +2,7 @@ import React from 'react'
 
 function SearchButton() {
   return (
-    <button>🔍</button>
+    <button type='submit'>🔍</button>
   )
 }
 

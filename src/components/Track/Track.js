@@ -7,7 +7,7 @@ function Track(props) {
       <h2>{props.trackName}</h2>
       <h3>{props.artistName}</h3>
       <p>{props.albumName}</p>
-      <img />
+      <img src={props.img}/>
     </div>
   )
 };
