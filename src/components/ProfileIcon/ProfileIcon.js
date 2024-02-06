@@ -1,8 +1,18 @@
 import React from 'react'
 
-function ProfileIcon({login}) {
+function ProfileIcon({login, profile}) {
+  if(profile) {
+    return (
+      <div>
+        <p>Hello, {profile.display_name}</p>
+        <img src={profile.images[0].url} alt={profile.display_name}/>
+      </div>
+    );
+  }
   return (
-    <div onClick={login}>ProfileIcon</div>
+    <div>
+      <button onClick={login}>Login</button>
+    </div>
   )
 }
 

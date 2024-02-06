@@ -31,16 +31,15 @@ const Spotify = {
         }
     },
 
-    async searchTracks(e) {
+    async searchTracks(e, token) {
         e.preventDefault();
-        this.getAccessToken();
         const trackSearched = e.target[0].value; 
         const urlToFetch= apiURL + 'search?q=' + trackSearched + '&type=track';
         try{
             const res = await fetch(urlToFetch, {
                 method: 'GET',
                 headers: {
-                    Authorization: `Bearer ${userToken}`
+                    Authorization: `Bearer ${token}`
                 }
             });
             const jsonRes = await res.json();
@@ -48,6 +47,18 @@ const Spotify = {
         } catch(err) {
             console.log(err)
         }
+    },
+
+    async getUserProfile(token) {
+        const urlToFetch = apiURL + 'me'
+        const res = await fetch(urlToFetch, {
+            method: 'GET',
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        });
+        const jsonResRes = await res.json();
+        return jsonResRes;
     }
 };
 
