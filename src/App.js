@@ -8,12 +8,21 @@ import Spotify from '../src/utils/Spotify';
 function App() {
 
   const [loggedIn, setLoggedIn] = useState(false);
-
-  const handleLogin = (userProfile) => {
-    if(userProfile) {
-      setLoggedIn(true);
-    };
+  const [userProfile, setUserProfile] = useState(null);
+  
+  const getProfile = async () => {
+    const token = await Spotify.getAccessToken()
+    const profile = await Spotify.getUserProfile(token);
+    setLoggedIn(true);
+    setUserProfile(profile)
   };
+
+  useEffect(()=> {
+    const isLoggedIn = window.location.href.match(/access_token=([^&]*)/);
+    if(isLoggedIn) {
+      getProfile();
+    }
+  }, [])
 
   const [searchResults, setSearchResults] = useState([]);
 
@@ -51,7 +60,7 @@ function App() {
     setSearchResults((prev) => [track, ...prev]);
   }
 
-  const handleSave = (playlist) => {
+  const handleSave = async (playlist) => {
     if(playlist.length === 0) {
       return alert('Please add at least 1 song to create a new playlist');
     } else if(playlistName === '') {
@@ -61,14 +70,19 @@ function App() {
       playlist.map((track) => {
         tracksUri.push(track.uri);
       });
-      console.log(tracksUri);
-      console.log(playlistName);
+      const token = await Spotify.getAccessToken();
+      const playlistRes = await Spotify.createPlaylist(userProfile.id, playlistName, token);
+      const playlistID = playlistRes.id;
+      const snapshot = await Spotify.updatePlaylist(tracksUri, playlistID, token);
+      if(snapshot) {
+        return alert(`Playlist '${playlistName}' created and added to your Spotify profile!`);
+      }
     }
   };
   
   return (
     <div className="App">
-      <HeaderContainer handleSearch={handleSearch} handleLogin={handleLogin}/>
+      <HeaderContainer handleSearch={handleSearch} userProfile={userProfile}/>
       <SearchResultsContainer searchResults={searchResults} handleAddTrack={handleAddTrack}/>
       <TracklistContainer handleSave={handleSave} handleNameInput={handleNameInput} playlist={playlist} handleRemoveTrack={handleRemoveTrack}/>
     </div>

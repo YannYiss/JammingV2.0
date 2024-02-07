@@ -57,8 +57,44 @@ const Spotify = {
                 Authorization: `Bearer ${token}`
             }
         });
-        const jsonResRes = await res.json();
-        return jsonResRes;
+        const jsonRes = await res.json();
+        console.log(jsonRes)
+        return jsonRes;
+    },
+
+    async createPlaylist(userId, playlistName, token) {
+        const urlToFetch = apiURL + 'users/' + userId + '/playlists';
+        const data = JSON.stringify({
+            name: playlistName,
+            public: false
+        });
+        const res = await fetch(urlToFetch, {
+            method: 'POST',
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-type': 'application/json'
+            },
+            body: data
+        });
+        const jsonRes = res.json();
+        return jsonRes;
+    },
+
+    async updatePlaylist(uris, playlistId, token) {
+        const urlToFetch = apiURL + 'playlists/' + playlistId + '/tracks';
+        const trackUris = JSON.stringify({
+            uris: uris
+        });
+        const res = await fetch(urlToFetch, {
+            method: 'POST',
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-type': 'application/json'
+            },
+            body: trackUris
+        });
+        const jsonRes = await res.json();
+        return jsonRes;        
     }
 };
 
