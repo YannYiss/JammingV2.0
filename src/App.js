@@ -36,7 +36,6 @@ function App() {
     }
     const token = await Spotify.getAccessToken()
     const res = await Spotify.searchTracks(e, token);
-    console.log(res)
     setSearchResults(res);
   }
 
@@ -49,7 +48,6 @@ function App() {
   const [playlist, setPlaylist] = useState([]);
 
   const handleAddTrack = (track) => {
-    console.log(track)
     setPlaylist((prev) => [track, ...prev]);
     setSearchResults(searchResults.filter((resultsTrack) => track !== resultsTrack));
   }
@@ -76,8 +74,8 @@ function App() {
       const snapshot = await Spotify.updatePlaylist(tracksUri, playlistID, token);
       if(snapshot) {
         return alert(`Playlist '${playlistName}' created and added to your Spotify profile!`);
-      }
-    }
+      };
+    };
   };
   
   return (

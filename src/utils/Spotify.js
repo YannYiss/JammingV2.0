@@ -58,7 +58,6 @@ const Spotify = {
             }
         });
         const jsonRes = await res.json();
-        console.log(jsonRes)
         return jsonRes;
     },
 
