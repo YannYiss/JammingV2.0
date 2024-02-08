@@ -1,0 +1,14 @@
+.loginButton {
+    border-radius: 50px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: rgba(245, 245, 245, 0.95);
+    font-size: 18px;
+    border: 3px solid black;
+}
+
+.loginButton:hover {
+    transition-duration: 0.35s;
+    background-color: rgba(29, 185, 84, 0.95);
+    color: whitesmoke;
+}

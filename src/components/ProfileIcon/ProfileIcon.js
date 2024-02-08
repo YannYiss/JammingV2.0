@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import styles from './ProfileIcon.module.css';
 
 function ProfileIcon({login, profile}) {
   if(profile) {
@@ -11,7 +12,7 @@ function ProfileIcon({login, profile}) {
   }
   return (
     <div>
-      <button onClick={login}>Login</button>
+      <button className={styles.loginButton} onClick={login}>Login</button>
     </div>
   )
 }

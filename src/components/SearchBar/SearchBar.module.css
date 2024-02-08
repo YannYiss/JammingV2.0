@@ -1,0 +1,26 @@
+.form {
+    display: inline-flex;
+    justify-content: space-between;
+    border: 3px solid black;
+    padding: 10px;
+    width: 50%;
+    border-radius: 60px;
+    background-color: rgba(245, 245, 245, 0.95);
+}
+
+.form:hover {
+    border-color: rgb(29, 185, 84);
+    transition-duration: 0.35s;
+}
+
+.input {
+    border: none;
+    margin-left: 10px;
+    background: none;
+    font-size: 18px;
+    width: 100%;
+}
+
+.input:focus {
+    outline: none;
+}

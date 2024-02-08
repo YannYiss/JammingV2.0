@@ -1,0 +1,30 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'cabin', sans-serif;
+}
+
+.app {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    margin: 0 auto;
+    height: 100vh;
+    background: 100%;
+    background-image: url(/src/media/app\ background.jpg)
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    padding: 25px 0;
+}
+
+.main {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+}

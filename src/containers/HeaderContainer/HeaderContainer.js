@@ -1,3 +1,4 @@
+import styles from './HeaderContainer.module.css'
 import React, { useEffect, useState } from 'react';
 import ProfileIcon from '../../components/ProfileIcon/ProfileIcon';
 import SearchBar from '../../components/SearchBar/SearchBar';
@@ -12,8 +13,12 @@ function HeaderContainer({handleSearch, userProfile}) {
 
   return (
     <>
-    <SearchBar handleSearch={handleSearch}/>
-    <ProfileIcon login={login} profile={userProfile}/>
+    <div className={styles.searchBar}>
+      <SearchBar handleSearch={handleSearch}/>
+    </div>
+    <div className={styles.profileIcon}>
+      <ProfileIcon login={login} profile={userProfile}/>
+    </div>
     </>
   )
 }

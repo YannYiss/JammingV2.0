@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import './App.css';
+import styles from './App.module.css';
 import HeaderContainer from './containers/HeaderContainer/HeaderContainer';
 import SearchResultsContainer from './containers/SearchResultsContainer/SearchResultsContainer';
 import TracklistContainer from './containers/TracklistContainer/TracklistContainer';
@@ -79,10 +79,14 @@ function App() {
   };
   
   return (
-    <div className="App">
-      <HeaderContainer handleSearch={handleSearch} userProfile={userProfile}/>
-      <SearchResultsContainer searchResults={searchResults} handleAddTrack={handleAddTrack}/>
-      <TracklistContainer handleSave={handleSave} handleNameInput={handleNameInput} playlist={playlist} handleRemoveTrack={handleRemoveTrack}/>
+    <div className={styles.app}>
+      <div className={styles.header}>
+        <HeaderContainer handleSearch={handleSearch} userProfile={userProfile} />
+      </div>
+      <div className={styles.main}>
+        <SearchResultsContainer searchResults={searchResults} handleAddTrack={handleAddTrack}/>
+        <TracklistContainer handleSave={handleSave} handleNameInput={handleNameInput} playlist={playlist} handleRemoveTrack={handleRemoveTrack}/>
+      </div>
     </div>
   );
 }
