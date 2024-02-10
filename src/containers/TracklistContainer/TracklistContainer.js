@@ -3,10 +3,11 @@ import Track from '../../components/Track/Track';
 import SaveButton from '../../components/SaveButton/SaveButton';
 import ActionButton from '../../components/AcctionButton/ActionButton';
 import Input from '../../components/Input/Input';
+import styles from './TracklistContainer.module.css'
 
 function TracklistContainer({handleRemoveTrack, handleNameInput, playlist, handleSave}) {
   return (
-    <div>
+    <div className={styles.container}>
       <Input handleNameInput={handleNameInput}/>
       {playlist.map((track) => {
         return (

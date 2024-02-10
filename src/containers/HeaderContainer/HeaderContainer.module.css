@@ -1,11 +1,8 @@
 .searchBar {
-    width: 85%;
-    display: inline-flex;
-    justify-content: center;
+    width: 65%;
+    text-align: center;
 } 
 
 .profileIcon {
-    width: 15%;
-    display: inline-flex;
-    justify-self: end;
+    width: 25%;
 }

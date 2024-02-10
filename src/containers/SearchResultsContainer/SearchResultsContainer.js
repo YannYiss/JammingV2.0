@@ -1,11 +1,12 @@
 import React from 'react';
 import Track from '../../components/Track/Track';
 import ActionButton from '../../components/AcctionButton/ActionButton';
+import styles from './SearchResultsContainer.module.css'
 
 function SearchResultsContainer({handleAddTrack, searchResults}) {
 
   return (
-    <div>
+    <div className={styles.container}>
       <h1>Search Results</h1>
         {searchResults.map((result) => {
         return (

@@ -12,3 +12,23 @@
     background-color: rgba(29, 185, 84, 0.95);
     color: whitesmoke;
 }
+
+.profile {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 20px;
+    color: whitesmoke
+    
+}
+
+.profileImg {
+    border-radius: 100px;
+    border: 3px solid black;
+}
+
+.profileImg:hover {
+    transition-duration: 0.35s;
+    border: 3px solid rgba(29, 185, 84, 0.95);
+}

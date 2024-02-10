@@ -4,9 +4,9 @@ import styles from './ProfileIcon.module.css';
 function ProfileIcon({login, profile}) {
   if(profile) {
     return (
-      <div>
+      <div className={styles.profile}>
         <p>Hello, {profile.display_name}</p>
-        <img src={profile.images[0].url} alt={profile.display_name}/>
+        <img className={styles.profileImg} src={profile.images[0].url} alt={profile.display_name}/>
       </div>
     );
   }
