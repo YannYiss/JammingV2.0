@@ -1,0 +1,15 @@
+.track {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.trackInfo {
+    width: 100%;
+    justify-content: center;
+}
+
+.album {
+    height: 100px;
+    width: 100px;
+}
