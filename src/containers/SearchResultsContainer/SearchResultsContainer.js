@@ -20,7 +20,7 @@ function SearchResultsContainer({handleAddTrack, searchResults}) {
               <Track artistName={result.artists[0].name} albumName={result.album.name} trackName={result.name} uri={result.uri} key={result.uri} img={result.album.images[1].url}/>
             </div>
             <div className={styles.addButton}>
-              <ActionButton action='➕' handleClick={() => handleAddTrack(result)}/>
+              <ActionButton action='+' handleClick={() => handleAddTrack(result)}/>
             </div>
           </div>
         );

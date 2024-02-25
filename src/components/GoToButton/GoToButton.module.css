@@ -1,0 +1,29 @@
+.goToButton {
+    height: fit-content;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid black;
+    border-radius: 15px;
+    transition-duration: 0.75s;
+    min-width: 120px;
+    margin-left: 10px;
+    display: none;
+}
+
+.goToButton:hover {
+    background: rgb(29, 185, 84);
+    transition-duration: 0.35s;
+    cursor: pointer;
+    color: whitesmoke
+}
+
+a {
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1586px) {
+    .goToButton {
+        display: block;
+    }
+}
+

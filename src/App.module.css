@@ -11,8 +11,22 @@
     width: 100vw;
     margin: 0 auto;
     height: 100vh;
-    background: 100%;
-    background-image: url(/src/media/app\ background.jpg)
+    background-image: url(/src/media/app\ background.jpg);
+    background-size: cover;
+}
+
+@media screen and (max-width: 1586px)  {
+    .app{
+        min-height: 100vh;
+        height: auto;
+        width: auto;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    .containers {
+        width: 60%;
+    }
 }
 
 .header {
@@ -24,7 +38,14 @@
 }
 
 .main {
-    width: 80%;
     display: flex;
     justify-content: space-evenly;
+    width: 80%;
+}
+
+.containers {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    flex-wrap: wrap;
 }

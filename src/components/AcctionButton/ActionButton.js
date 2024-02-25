@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import styles from './ActionButton.module.css';
 
 function ActionButton({action, handleClick}) {
   return (
-    <button onClick={handleClick}>{action}</button>
+    <button className={styles.actionButton} onClick={handleClick}>{action}</button>
   )
 }
 

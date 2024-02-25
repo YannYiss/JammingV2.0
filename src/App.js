@@ -3,6 +3,7 @@ import styles from './App.module.css';
 import HeaderContainer from './containers/HeaderContainer/HeaderContainer';
 import SearchResultsContainer from './containers/SearchResultsContainer/SearchResultsContainer';
 import TracklistContainer from './containers/TracklistContainer/TracklistContainer';
+import GoToButton from './components/GoToButton/GoToButton';
 import Spotify from '../src/utils/Spotify';
 
 function App() {
@@ -84,8 +85,13 @@ function App() {
         <HeaderContainer handleSearch={handleSearch} userProfile={userProfile} />
       </div>
       <div className={styles.main}>
-        <SearchResultsContainer searchResults={searchResults} handleAddTrack={handleAddTrack}/>
-        <TracklistContainer handleSave={handleSave} handleNameInput={handleNameInput} playlist={playlist} handleRemoveTrack={handleRemoveTrack}/>
+        <div className={styles.containers}>
+          <SearchResultsContainer searchResults={searchResults} handleAddTrack={handleAddTrack}/>
+          <TracklistContainer handleSave={handleSave} handleNameInput={handleNameInput} playlist={playlist} handleRemoveTrack={handleRemoveTrack}/>
+        </div>
+        <div className={styles.moveToPlaylist}>
+          <GoToButton />
+        </div>
       </div>
     </div>
   );

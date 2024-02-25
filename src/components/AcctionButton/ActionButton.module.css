@@ -1,0 +1,15 @@
+.actionButton {
+    border-radius: 50px;
+    border: 3px solid black;
+    padding: 5px 5px 8px 5px;
+    background: none;
+    font-size: 36px;
+    line-height: 40%;
+    transition-duration: 0.75s;
+}
+
+.actionButton:hover {
+    background: rgb(29, 185, 84);
+    transition-duration: 0.35s;
+    color: whitesmoke;
+}

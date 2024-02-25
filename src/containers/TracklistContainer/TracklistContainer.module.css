@@ -5,4 +5,38 @@
     border-radius: 12px;
     border: 1px solid rgba(209, 213, 219, 0.3);
     padding: 10px 30px;
-};
+    text-align: center;
+    width: 500px;
+    height: 80vh;
+    min-width: 300px;
+    margin-left: 15px;
+    overflow-y: scroll;
+    scrollbar-color: rgba(102, 102, 102, 0.555) transparent;
+    overflow-x: hidden;
+}
+
+@media screen and (max-width: 1586px) {
+    .container {
+        margin-top: 30px;
+    }
+}
+
+.hide {
+    display: none;
+}
+
+.track {
+    display: flex;
+    align-items: center;
+    border-bottom: solid rgba(102, 102, 102, 0.555);
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+}
+
+.trackInfo {
+    width: 80%;
+}
+
+.removeButton {
+    width: 20%;
+}
