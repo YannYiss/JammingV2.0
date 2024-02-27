@@ -47,15 +47,20 @@ function App() {
   };
 
   const [playlist, setPlaylist] = useState([]);
+  const [goToButtonShow, setGoToButtonShow] = useState(false);
 
   const handleAddTrack = (track) => {
     setPlaylist((prev) => [track, ...prev]);
     setSearchResults(searchResults.filter((resultsTrack) => track !== resultsTrack));
+    setGoToButtonShow(true);
   }
 
   const handleRemoveTrack = (track) => {
-    const newArray = playlist.filter((trackInPlaylist) => track !== trackInPlaylist)
-    setPlaylist(newArray)
+    const newArray = playlist.filter((trackInPlaylist) => track !== trackInPlaylist);
+    setPlaylist(newArray);
+    if(newArray.length === 0) {
+      setGoToButtonShow(false);
+    }
     setSearchResults((prev) => [track, ...prev]);
   }
 
@@ -74,15 +79,12 @@ function App() {
       const playlistID = playlistRes.id;
       const snapshot = await Spotify.updatePlaylist(tracksUri, playlistID, token);
       if(snapshot) {
+        setSearchResults([]);
+        setPlaylist([]);
+        setPlaylistName('');
         return alert(`Playlist '${playlistName}' created and added to your Spotify profile!`);
       };
     };
-  };
-
-  const [goToButtonShow, setGoToButtonShow] = useState(false);
-
-  if(playlist.length > 0) {
-    setGoToButtonShow(true);
   };
   
   return (
