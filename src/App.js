@@ -82,6 +82,7 @@ function App() {
         setSearchResults([]);
         setPlaylist([]);
         setPlaylistName('');
+        setGoToButtonShow(false);
         return alert(`Playlist '${playlistName}' created and added to your Spotify profile!`);
       };
     };
