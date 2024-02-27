@@ -82,7 +82,7 @@ function App() {
   const [goToButtonShow, setGoToButtonShow] = useState(false);
 
   if(playlist.length > 0) {
-    setGoToButtonShow = true;
+    setGoToButtonShow(true);
   };
   
   return (
