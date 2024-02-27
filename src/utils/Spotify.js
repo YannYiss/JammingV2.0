@@ -1,5 +1,5 @@
 const client_id = 'c14ef43d33614a3882e0301f269d1ff6';
-const redirect_url = 'http://localhost:3000/';
+const redirect_url = 'https://jammingwithspotifyv2.netlify.app/';
 const scope = 'playlist-modify-public playlist-modify-private playlist-read-private';
 let apiURL = 'https://api.spotify.com/v1/'
 
@@ -28,7 +28,7 @@ const Spotify = {
             return userToken;
         } else {
             window.location = url;
-        }
+        };
     },
 
     async searchTracks(e, token) {

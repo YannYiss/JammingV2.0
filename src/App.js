@@ -78,6 +78,12 @@ function App() {
       };
     };
   };
+
+  const [goToButtonShow, setGoToButtonShow] = useState(false);
+
+  if(playlist.length > 0) {
+    setGoToButtonShow = true;
+  };
   
   return (
     <div className={styles.app}>
@@ -89,8 +95,8 @@ function App() {
           <SearchResultsContainer searchResults={searchResults} handleAddTrack={handleAddTrack}/>
           <TracklistContainer handleSave={handleSave} handleNameInput={handleNameInput} playlist={playlist} handleRemoveTrack={handleRemoveTrack}/>
         </div>
-        <div className={styles.moveToPlaylist}>
-          <GoToButton />
+        <div>
+          <GoToButton hide={goToButtonShow}/>
         </div>
       </div>
     </div>

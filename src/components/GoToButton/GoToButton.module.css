@@ -17,6 +17,10 @@
     color: whitesmoke
 }
 
+.hideButton {
+    display: none;
+}
+
 a {
     text-decoration: none;
 }
