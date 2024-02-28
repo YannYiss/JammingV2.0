@@ -8,7 +8,7 @@
     text-align: center;
     width: 500px;
     height: 80vh;
-    min-width: 300px;
+    min-width: 250px;
     margin-left: 15px;
     overflow-y: scroll;
     scrollbar-color: rgba(102, 102, 102, 0.555) transparent;
@@ -39,4 +39,11 @@
 
 .removeButton {
     width: 20%;
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        margin: 30px auto;
+        height: 70vh;
+    }
 }

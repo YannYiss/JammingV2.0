@@ -17,3 +17,9 @@
     outline: none;
     transition-duration: 0.75s;
 }
+
+@media screen and (max-width: 800px) {
+    .input {
+        font-size: 16px;
+    }
+}

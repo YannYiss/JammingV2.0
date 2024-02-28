@@ -32,3 +32,20 @@
     transition-duration: 0.35s;
     border: 3px solid rgba(29, 185, 84, 0.95);
 }
+
+@media screen and (max-width: 800px) {
+    .loginButton {
+        font-size: 14px;
+        margin-left: 15px
+    }
+
+    .profile {
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    p {
+        font-size: 14px;
+        text-align: center;
+    }
+}

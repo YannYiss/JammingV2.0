@@ -1,11 +1,11 @@
 .goToButton {
     height: fit-content;
     padding: 10px;
-    font-size: 16px;
+    font-size: 32px;
+    line-height: 20px;
     border: 2px solid black;
-    border-radius: 15px;
+    border-radius: 50px;
     transition-duration: 0.75s;
-    min-width: 120px;
     margin-left: 10px;
     display: none;
 }
@@ -29,5 +29,13 @@ a {
     .goToButton {
         display: block;
     }
+}
+
+@media screen and (max-width: 800px) {
+     .goToButton {
+        font-size: 18px;
+        line-height: 12px;
+        padding: 5px;
+     }
 }
 

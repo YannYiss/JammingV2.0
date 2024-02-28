@@ -7,7 +7,7 @@
     padding: 10px 30px;
     text-align: center;
     width: 500px;
-    min-width: 300px;
+    min-width: 250px;
     height: 80vh;
     overflow-y: scroll;
     scrollbar-color: rgba(102, 102, 102, 0.555) transparent;
@@ -37,5 +37,16 @@
 
 .addButton {
     width: 20%;
+}
+
+@media screen and (max-width: 800px) {
+    .h1 {
+        font-size: 20px;
+    }
+
+    .container {
+        margin: 0 auto;
+        height: 74vh;
+    }
 }
 
